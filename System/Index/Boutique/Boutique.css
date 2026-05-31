@@ -474,3 +474,30 @@ html, body {
 @keyframes spin {
 	to { transform: rotate(360deg); }
 }
+
+@media (max-width: 767px) {
+	.banner { margin: 72px 14px 0; height: 180px; }
+	.boutique-title { font-size: 2rem; margin-bottom: 20px; }
+	.boutique-subtitle { font-size: 1rem; margin-bottom: 30px; }
+	.products-grid { gap: 18px; }
+	.product-card { padding: 18px; }
+	.product-image { font-size: 64px; min-height: 88px; }
+	.product-name { font-size: 1.1rem; }
+	.product-price { font-size: 1.2rem; }
+	.buy-btn, .HK-buy-btn { width: 100%; padding: 12px 18px; }
+	.boutique-container { padding: 32px 16px 24px; }
+	.nav-widget { width: calc(100% - 20px); left: 10px; top: 80px; }
+}
+
+@media (max-width: 480px) {
+	.banner { margin: 72px 12px 0; height: 160px; }
+	.boutique-title { font-size: 1.7rem; }
+	.boutique-subtitle { font-size: 0.95rem; }
+	.products-grid { grid-template-columns: 1fr; gap: 14px; }
+	.product-card { padding: 16px; }
+	.product-image { font-size: 56px; min-height: 78px; }
+	.product-price { font-size: 1.1rem; }
+	.boutique-container { padding: 24px 12px 20px; }
+	.nav-item { padding: 10px 12px; }
+	.logo.large { font-size: 32px; }
+}

@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			item.classList.add('active');
 			
 			const navigationMap = {
-				'profile': '../Profile/Profile.html',
+				'profile': '/System/index/Profile/Profile.html',
 				'chat': '../Chat/Chat.html',
 				'welcome': '../Welcome/Welcome.html',
 				'settings': '../Settings/Settings.html',

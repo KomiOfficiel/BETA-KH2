@@ -120,3 +120,23 @@ body {
         left: 100%;
     }
 }
+
+@media (max-width: 480px) {
+    body {
+        min-height: 100vh;
+    }
+
+    .crown {
+        width: 90px;
+        height: 78px;
+    }
+
+    .kh2-text {
+        font-size: 56px;
+        letter-spacing: 6px;
+    }
+
+    .loading-bar {
+        width: 180px;
+    }
+}

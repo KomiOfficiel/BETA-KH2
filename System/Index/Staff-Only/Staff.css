@@ -587,3 +587,91 @@ body {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
+
+@media (max-width: 960px) {
+    .staff-main {
+        padding: 20px 14px 16px;
+    }
+
+    .staff-panel {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .staff-widget {
+        position: static;
+        width: 100%;
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .staff-title {
+        font-size: 1.35rem;
+        margin-bottom: 0.85rem;
+    }
+
+    .staff-items {
+        gap: 0.65rem;
+    }
+
+    .staff-item {
+        padding: 12px 14px;
+    }
+
+    .command-panel.open {
+        max-height: 520px;
+    }
+
+    .user-panel {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin-left: 0;
+        transform: translateY(0);
+        padding: 16px;
+        box-shadow: none;
+        border-radius: 18px;
+    }
+
+    .user-panel.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .staff-main {
+        padding: 18px 12px 14px;
+    }
+
+    .staff-widget {
+        padding: 14px;
+    }
+
+    .staff-item {
+        gap: 0.65rem;
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .staff-icon {
+        font-size: 1rem;
+    }
+
+    .staff-label {
+        width: 100%;
+    }
+
+    .user-panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .close-btn {
+        width: auto;
+        align-self: flex-end;
+    }
+}

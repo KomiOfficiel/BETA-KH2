@@ -371,12 +371,21 @@ html, body {
 
 /* Responsive */
 @media (max-width: 768px) {
+	.welcome-container {
+		padding: 30px 16px 24px;
+	}
+
 	.welcome-card {
+		width: 100%;
 		padding: 24px;
 	}
 
 	.welcome-header h1 {
-		font-size: 28px;
+		font-size: 32px;
+	}
+
+	.subtitle {
+		font-size: 15px;
 	}
 
 	.features-grid {
@@ -384,9 +393,29 @@ html, body {
 		gap: 16px;
 	}
 
+	.feature-card {
+		padding: 20px;
+	}
+
+	.feature-card:hover {
+		transform: none;
+	}
+
+	.feature-icon {
+		font-size: 36px;
+	}
+
 	.welcome-sections {
 		grid-template-columns: 1fr;
 		gap: 20px;
+	}
+
+	.section {
+		padding: 20px;
+	}
+
+	.section h2 {
+		font-size: 17px;
 	}
 
 	.welcome-actions {
@@ -398,8 +427,65 @@ html, body {
 	}
 
 	.logo.large {
-		font-size: 24px;
+		font-size: 26px;
 		padding: 8px 12px;
+	}
+
+	.nav-widget {
+		top: 70px;
+		left: 8px;
+		width: calc(100% - 16px);
+		max-width: 340px;
+	}
+
+	.nav-item {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 480px) {
+	.welcome-container {
+		padding: 24px 12px 20px;
+	}
+
+	.welcome-card {
+		padding: 20px;
+	}
+
+	.welcome-header h1 {
+		font-size: 26px;
+	}
+
+	.subtitle {
+		font-size: 14px;
+	}
+
+	.feature-card {
+		padding: 18px;
+	}
+
+	.feature-icon {
+		font-size: 32px;
+	}
+
+	.section {
+		padding: 18px;
+	}
+
+	.section h2 {
+		font-size: 15px;
+	}
+
+	.welcome-actions {
+		gap: 10px;
+	}
+
+	.btn {
+		padding: 12px 18px;
+	}
+
+	.logo.large {
+		font-size: 22px;
 	}
 }
 
