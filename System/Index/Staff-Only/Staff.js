@@ -17,9 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const userCount = document.getElementById('user-count');
     const userList = document.getElementById('user-list');
     const profileState = JSON.parse(localStorage.getItem('profile_state') || '{}');
-    const profileRole = profileState.role;
-    const profileTags = Array.isArray(profileState.tags) ? profileState.tags : [];
-    const hasStaffAccess = profileRole === 'Fondateur' || profileTags.some((tag) => String(tag).toLowerCase().includes('grand gérant'));
+    const profilePseudo = profileState.pseudo ? profileState.pseudo.toLowerCase() : '';
+    const hasStaffAccess = profilePseudo === 'komi_officiel';
 
     if (!hasStaffAccess) {
         window.location.href = '../Welcome/Welcome.html';

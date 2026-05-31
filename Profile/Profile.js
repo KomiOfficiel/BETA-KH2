@@ -88,6 +88,7 @@
             state.role = '';
         }
         if (state.pseudo) {
+            addPseudoToRegistry(state.pseudo);
             const storedRecord = loadProfileRecord(state.pseudo);
             if (storedRecord && Array.isArray(storedRecord.tags)) {
                 state.tags = storedRecord.tags;
