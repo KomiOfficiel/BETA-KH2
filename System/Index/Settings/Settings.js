@@ -143,12 +143,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			item.classList.add('active');
 			
 			const navigationMap = {
-				'profile': '/Profile/Profile.html',
-				'chat': '../System/Index/Chat/Chat.html',
-				'welcome': '../System/Index/Welcome/Welcome.html',
-				'settings': '../System/Index/Settings/Settings.html'
-			};
-			
+                'profile': '../Profile/Profile.html',
+                'chat': '../Chat/ChatPriv.html',
+                'welcome': '../Welcome/Welcome.html',
+                'settings': 'Settings.html'
+            };
+
 			const targetPage = navigationMap[page];
 			if (targetPage) {
 				window.location.href = targetPage;

@@ -326,12 +326,12 @@
                 navItems.forEach((n) => n.classList.remove('active'));
                 item.classList.add('active');
                 const map = {
-                    profile: '/Profile/Profile.html',
-                    chat: '../System/Index/Chat/Chat.html',
-                    welcome: '../System/Index/Welcome/Welcome.html',
-                    settings: '../System/Index/Settings/Settings.html',
-                    Boutique: '../System/Index/Boutique/Boutique.html',
-                    'Chat-Staff': '../System/Index/Staff-Only/Staff.html'
+                    profile: 'Profile.html',
+                    chat: '../Chat/ChatPriv.html',
+                    welcome: '../Welcome/Welcome.html',
+                    settings: '../Settings/Settings.html',
+                    Boutique: '../Boutique/Boutique.html',
+                    'Chat-Staff': '../Staff-Only/Staff.html'
                 };
                 const target = map[page];
                 if (target) window.location.href = target;

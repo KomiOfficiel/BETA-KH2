@@ -31,13 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			item.classList.add('active');
 			
 			const navigationMap = {
-				'profile': '/System/index/Profile/Profile.html',
-				'chat': '../Chat/Chat.html',
-				'welcome': '../Welcome/Welcome.html',
-				'settings': '../Settings/Settings.html',
-				'boutique': '../Boutique/Boutique.html'
-			};
-			
+                'profile': '../Profile/Profile.html',
+                'chat': '../Chat/ChatPriv.html',
+                'welcome': '../Welcome/Welcome.html',
+                'settings': '../Settings/Settings.html',
+                'boutique': 'Boutique.html'
+            };
 			const targetPage = navigationMap[page];
 			if (targetPage) {
 				window.location.href = targetPage;

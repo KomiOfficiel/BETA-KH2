@@ -49,13 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			item.classList.add('active');
 			
 			const navigationMap = {
-				'profile': '/Profile/Profile.html',
-				'chat': '../System/Index/Chat/Chat.html',
-				'welcome': '/System/Index/Welcome/Welcome.html',
-				'settings': '/System/Index/Settings/Settings.html',
-				'Boutique': '/System/Index/Boutique/Boutique.html'
-			};
-			
+                'profile': '../Profile/Profile.html',
+                'chat': '../Chat/ChatPriv.html',
+                'settings': '../Settings/Settings.html',
+                'Boutique': '../Boutique/Boutique.html'
+            };
 			const targetPage = navigationMap[page];
 			if (targetPage) {
 				window.location.href = targetPage;
@@ -66,14 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	goToProfileBtn.addEventListener('click', () => {
 		showToast('Redirection vers ton profil...', { type: 'success', duration: 1500 });
 		setTimeout(() => {
-			window.location.href = '/Profile/Profile.html';
+			window.location.href = '../Profile/Profile.html';
 		}, 600);
 	});
 
 	goToChatBtn.addEventListener('click', () => {
 		showToast('Redirection vers le chat...', { type: 'success', duration: 1500 });
 		setTimeout(() => {
-			window.location.href = '/System/Index/Chat/Chat.html';
+			window.location.href = '../Chat/ChatPriv.html';
 		}, 600);
 	});
 });

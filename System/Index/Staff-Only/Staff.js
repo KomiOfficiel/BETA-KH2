@@ -17,8 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const userCount = document.getElementById('user-count');
     const userList = document.getElementById('user-list');
     const profileState = JSON.parse(localStorage.getItem('profile_state') || '{}');
-    const profilePseudo = profileState.pseudo ? profileState.pseudo.toLowerCase() : '';
-    const hasStaffAccess = profilePseudo === 'komi_Officiel';
+    const profileRole = profileState.role;
+    const profileTags = Array.isArray(profileState.tags) ? profileState.tags : [];
+    const hasStaffAccess = profileRole === 'Fondateur' || profileTags.some((tag) => String(tag).toLowerCase().includes('grand gérant'));
 
     if (!hasStaffAccess) {
         window.location.href = '../Welcome/Welcome.html';
@@ -136,12 +137,12 @@ document.addEventListener('DOMContentLoaded', function() {
             navWidget.classList.add('hidden');
 
             const navigationMap = {
-                'profile': '../../../Profile/Profile.html',
-                'chat': '../Chat/Chat.html',
+                'profile': '../Profile/Profile.html',
+                'chat': '../Chat/ChatPriv.html',
                 'welcome': '../Welcome/Welcome.html',
                 'settings': '../Settings/Settings.html',
                 'Boutique': '../Boutique/Boutique.html',
-                'Chat-Staff': '../Chat/Chat.html'
+                'Chat-Staff': '../Chat/ChatPriv.html'
             };
 
             const targetPage = navigationMap[item.dataset.page];
