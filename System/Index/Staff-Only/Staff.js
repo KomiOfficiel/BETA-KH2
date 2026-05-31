@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const userList = document.getElementById('user-list');
     const profileState = JSON.parse(localStorage.getItem('profile_state') || '{}');
     const profilePseudo = profileState.pseudo ? profileState.pseudo.toLowerCase() : '';
-    const hasStaffAccess = profilePseudo === 'komi_officiel';
+    const hasStaffAccess = profilePseudo === 'komi_Officiel';
 
     if (!hasStaffAccess) {
         window.location.href = '../Welcome/Welcome.html';
