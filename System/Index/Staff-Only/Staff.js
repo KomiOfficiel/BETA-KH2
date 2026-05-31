@@ -19,7 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const profileState = JSON.parse(localStorage.getItem('profile_state') || '{}');
     const profileRole = profileState.role;
     const profileTags = Array.isArray(profileState.tags) ? profileState.tags : [];
-    const hasStaffAccess = profileRole === 'Fondateur' || profileTags.some((tag) => String(tag).toLowerCase().includes('grand gérant'));
+    const hasStaffAccess = profileRole === 'Fondateur' || profileTags.some((tag) => {
+        const normalized = String(tag).toLowerCase();
+        return normalized.includes('grand gérant') || normalized.includes('fondateur');
+    });
 
     if (!hasStaffAccess) {
         window.location.href = '../Welcome/Welcome.html';
@@ -45,6 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
             return JSON.parse(localStorage.getItem('profile_records') || '{}');
         } catch (error) {
             return {};
+        }
+    }
+
+    function getPseudoRegistry() {
+        try {
+            return JSON.parse(localStorage.getItem('profile_pseudos') || '[]');
+        } catch (error) {
+            return [];
         }
     }
 
@@ -81,7 +92,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderUserPanel() {
         if (!userCount || !userList) return;
         const registry = loadProfilesRegistry();
-        const users = Object.values(registry).filter((record) => record && record.pseudo);
+        const pseudos = new Set(getPseudoRegistry().map((pseudo) => String(pseudo).toLowerCase()));
+        if (profileState.pseudo) {
+            pseudos.add(profileState.pseudo.toLowerCase());
+        }
+        const users = Array.from(pseudos).map((pseudo) => {
+            const record = registry[pseudo] || {};
+            return {
+                pseudo: record.pseudo || pseudo,
+                name: record.name || 'Sans nom affiché'
+            };
+        }).sort((a, b) => a.pseudo.localeCompare(b.pseudo, 'fr'));
+
         userCount.textContent = `${users.length} utilisateur${users.length === 1 ? '' : 's'}`;
         userList.innerHTML = '';
         if (!users.length) {
@@ -190,6 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!rolePreview || !roleSelect) return;
         const value = roleSelect.value;
         const mapping = {
+            'Fondateur': { text: 'Fondateur', className: 'tag-fondateur' },
             'Grand Gérant': { text: 'Grand Gérant', className: 'tag-grand-gerant' },
             'Collaboration': { text: 'Collaboration ★', className: 'tag-collaboration' },
             'Influenceur': { text: 'Influenceur ▶️', className: 'tag-influenceur' },

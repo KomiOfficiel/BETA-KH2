@@ -383,6 +383,13 @@ body {
     color: #ffffff;
 }
 
+.tag-fondateur {
+    background: rgba(241,196,15,0.12);
+    border: 1px solid rgba(241,196,15,0.25);
+    color: #f1c40f;
+    box-shadow: 0 0 14px rgba(241,196,15,0.15);
+}
+
 .tag-collaboration {
     background: linear-gradient(135deg, #1abc9c, #16a085);
     color: #fff;

@@ -183,6 +183,9 @@
         if (normalized.includes('grand gérant')) {
             return 'role-chip tag-grand-gerant';
         }
+        if (normalized.includes('fondateur')) {
+            return 'role-chip tag-fondateur';
+        }
         if (normalized.includes('collaboration')) {
             return 'role-chip tag-collaboration';
         }
@@ -226,7 +229,10 @@
             displayPseudo.textContent = state.pseudo ? `@${state.pseudo}` : '';
         }
         if (descriptionEl) descriptionEl.textContent = state.description || '';
-        if (roleTag) roleTag.style.display = state.role === 'Fondateur' ? 'inline-flex' : 'none';
+        if (roleTag) {
+            const hasFounderTag = Array.isArray(state.tags) && state.tags.some((tag) => String(tag).toLowerCase().includes('fondateur'));
+            roleTag.style.display = state.role === 'Fondateur' || hasFounderTag ? 'inline-flex' : 'none';
+        }
         if (tagList) {
             const existing = tagList.querySelectorAll('.role-chip');
             existing.forEach((chip) => chip.remove());
