@@ -1,0 +1,173 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Profil</title>
+	<link rel="stylesheet" href="Profile.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="logo large" id="logo">
+			KH<span class="two">2<span class="crown" aria-hidden="true">👑</span></span>
+		</div>
+	</header>
+
+	<main class="profile-container">
+		<section class="profile-card">
+			<div class="banner" id="banner">
+				<div class="banner-fallback" id="banner-fallback">+</div>
+			</div>
+
+			<div class="profile-top">
+				<div class="avatar-wrap">
+					<img id="avatar-img" class="avatar hidden" alt="Photo de profil">
+					<div class="main-avatar-default">KH2</div>
+					<input id="avatar-input" type="file" accept="image/*" class="file-input">
+				</div>
+
+				<div class="profile-info">
+					<div id="display-title" class="profile-title">Titre du profil</div>
+					<h1 id="display-name">Nom d'utilisateur</h1>
+					<div id="display-pseudo" class="display-pseudo"></div>
+					<div class="counters">
+						<div class="counter" id="followers-block" title="𝗖𝗹𝗶𝗾𝘂𝗲𝗿 𝗮𝗳𝗳𝗶𝗰𝗵𝗲 𝗹𝗲 𝗻𝗼𝗺𝗯𝗿𝗲 𝗱𝗲 𝗽𝗲𝗿𝘀𝗼𝗻𝗻𝗲𝘀 𝗾𝘂𝗶 𝘃𝗼𝘂𝘀 𝘀𝘂𝗶𝘃𝗲𝗻𝘁 !">
+							<div class="count" id="followers">0</div>
+							<div class="label">Abonnés</div>
+						</div>
+						<div class="counter" id="following-block" title="𝗖𝗹𝗶𝗾𝘂𝗲𝗿 𝗮𝗳𝗳𝗶𝗰𝗵𝗲 𝗹𝗲 𝗻𝗼𝗺𝗯𝗿𝗲 𝗱𝗲 𝗽𝗲𝗿𝘀𝗼𝗻𝗻𝗲𝘀 𝘀𝘂𝗶𝘃𝗶𝗲𝘀 !">
+							<div class="count" id="following">0</div>
+							<div class="label">Abonnements</div>
+						</div>
+					</div>
+				<div class="profile-actions">
+					<button id="follow-btn" class="btn secondary follow-btn">Suivre</button>
+					<button id="btn-edit" class="btn secondary">Modifier le profil</button>
+				</div>
+			<div class="tag-list" id="tag-list">
+				<div class="role-tag" id="role-tag">Fondateur <span class="role-check">✔</span></div>
+			</div>
+			<p id="description" class="description">Une courte description du profil. Cliquez sur "Modifier le profil" pour la changer.</p>
+			</div>
+		</section>
+	</main>
+
+	<div id="loading-card" class="loading-overlay" role="status" aria-live="polite">
+		<div class="loading-content">
+			<div class="loading-logo">KH<span class="loading-two">2</span></div>
+			<div class="loading-spinner" aria-hidden="true"></div>
+			<div class="loading-text">Chargement en cours</div>
+		</div>
+	</div>
+
+
+
+
+	<aside id="edit-panel" class="edit-panel" aria-hidden="true">
+		<div class="edit-inner edit-form">
+			<div class="panel-header">
+				<h2>Modifier le profil</h2>
+				<button id="cancel-edit" class="btn" aria-label="Fermer">✕</button>
+			</div>
+
+		
+			<div class="panel-banner" id="panel-banner">
+				<label class="banner-placeholder" id="banner-placeholder">
+					<input id="edit-banner-input" type="file" accept="image/*" class="file-input-hidden">
+					<span class="plus">+</span>
+				</label>
+			</div>
+
+			
+			<div class="panel-avatar">
+				<label class="avatar-placeholder" id="avatar-placeholder">
+					<input id="edit-avatar-input" type="file" accept="image/*" class="file-input-hidden">
+					<img id="edit-avatar-preview" alt="Preview" class="avatar-preview hidden">
+					<div class="avatar-default">KH2</div>
+				</label>
+			</div>
+
+			
+			<h3 id="panel-username" class="panel-username">Nom d'utilisateur</h3>
+				<label class="field">Pseudo unique (identifiant définitif)
+					<input id="input-pseudo" type="text" value="" placeholder="Entrez votre pseudo unique" maxlength="24">
+					<div class="field-hint">Ce pseudo ne pourra plus être modifié après création.</div>
+				</label>
+				<label class="field">Titre du profil
+					<input id="input-title" type="text" value="" placeholder="Titre à afficher au-dessus du nom">
+				</label>
+				<label class="field">Nom affiché en haut
+					<input id="input-name" type="text" value="">
+				</label>
+
+			<label class="field">Description
+				<textarea id="input-desc" rows="3" placeholder="Une courte description"></textarea>
+			</label>
+
+			
+			<div class="note-card">
+				<label>Note personnelle (privée)
+					<textarea id="input-note" maxlength="500" rows="6" placeholder="Écrivez votre note personnelle (max 500 caractères)"></textarea>
+					<div class="note-counter"><span id="note-count">0</span>/500</div>
+					<div class="private-note-hint">🔒 Note visible uniquement par vous</div>
+				</label>
+			</div>
+
+			<div class="confirm-row">
+				<button id="confirm-btn" class="btn primary confirm">Confirmer</button>
+			</div>
+		</div>
+	</aside>
+
+	
+	<div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+	<div id="nav-widget" class="nav-widget hidden" aria-hidden="true">
+		<div class="nav-content">
+			<div class="nav-title">Navigation</div>
+			<div class="nav-items">
+				<div class="nav-item" data-page="profile">
+					<div class="nav-icon">👤</div>
+					<div class="nav-label">Profile</div>
+				</div>
+				<div class="nav-item" data-page="chat">
+					<div class="nav-icon">💬</div>
+					<div class="nav-label">Chat Global [Soon]</div>
+				</div>
+				<div class="nav-item" data-page="Boutique">
+					<div class="nav-icon">🔒</div>
+					<div class="nav-label">Chat Priv [Soon]</div>
+				</div>
+				<div class="nav-item" data-page="welcome">
+					<div class="nav-icon">👋</div>
+					<div class="nav-label">Welcome</div>
+				</div>
+				<div class="nav-item" data-page="Boutique">
+					<div class="nav-icon">🛒</div>
+					<div class="nav-label">Boutique</div>
+				</div>
+				<div class="nav-item" data-page="settings">
+					<div class="nav-icon">⚙️</div>
+					<div class="nav-label">Paramètres [Soon]</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="followers-modal" class="followers-modal hidden">
+		<div class="followers-overlay"></div>
+		<div class="followers-card">
+			<div class="followers-header">
+				<h2 id="followers-title">Followers</h2>
+				<button id="followers-close" class="followers-close">✕</button>
+			</div>
+			<div class="followers-list" id="followers-list">
+				<p class="empty-list">Aucun follower pour le moment</p>
+			</div>
+		</div>
+	</div>
+
+	<script src="Profile.js"></script>
+</body>
+</html>

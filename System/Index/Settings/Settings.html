@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Paramètres - KH2</title>
+	<link rel="stylesheet" href="Settings.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="logo large" id="logo">
+			KH<span class="two">2<span class="crown" aria-hidden="true">👑</span></span>
+		</div>
+	</header>
+
+	<div class="settings-container">
+		<div class="settings-card">
+			<h1>⚙️ Paramètres</h1>
+
+			<!-- Thème -->
+			<div class="settings-section">
+				<h2>Apparence</h2>
+				<div class="setting-item">
+					<div class="setting-label">Thème sombre</div>
+					<input type="checkbox" class="toggle-switch" id="dark-mode-toggle" checked>
+				</div>
+				<div class="setting-item">
+					<div class="setting-label">Animations</div>
+					<input type="checkbox" class="toggle-switch" id="animations-toggle" checked>
+				</div>
+			</div>
+
+			<!-- Confidentialité -->
+			<div class="settings-section">
+				<h2>Confidentialité</h2>
+				<div class="setting-item">
+					<div class="setting-label">Profil public</div>
+					<input type="checkbox" class="toggle-switch" id="public-profile-toggle" checked>
+				</div>
+				<div class="setting-item">
+					<div class="setting-label">Afficher le statut en ligne</div>
+					<input type="checkbox" class="toggle-switch" id="online-status-toggle" checked>
+				</div>
+				<div class="setting-item">
+					<div class="setting-label">Autoriser les messages privés</div>
+					<input type="checkbox" class="toggle-switch" id="dm-toggle" checked>
+				</div>
+			</div>
+
+			<!-- Notifications -->
+			<div class="settings-section">
+				<h2>Notifications</h2>
+				<div class="setting-item">
+					<div class="setting-label">Notifications du chat</div>
+					<input type="checkbox" class="toggle-switch" id="chat-notifications-toggle" checked>
+				</div>
+				<div class="setting-item">
+					<div class="setting-label">Notifications de suivi</div>
+					<input type="checkbox" class="toggle-switch" id="follow-notifications-toggle" checked>
+				</div>
+				<div class="setting-item">
+					<div class="setting-label">Sons</div>
+					<input type="checkbox" class="toggle-switch" id="sound-toggle" checked>
+				</div>
+			</div>
+
+			<!-- Actions -->
+			<div class="settings-section">
+				<h2>Données</h2>
+				<button class="btn btn-secondary" id="export-btn">📥 Exporter les données</button>
+				<button class="btn btn-secondary" id="reset-btn">🔄 Réinitialiser les paramètres</button>
+				<button class="btn btn-danger" id="clear-btn">🗑️ Effacer toutes les données</button>
+			</div>
+
+			<!-- Navigation widget -->
+			<div class="settings-nav-buttons">
+				<button class="nav-back-btn" id="back-btn">← Retour au profil</button>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="nav-widget" class="nav-widget hidden" aria-hidden="true">
+		<div class="nav-content">
+			<div class="nav-title">Navigation</div>
+			<div class="nav-items">
+				<div class="nav-item" data-page="profile">
+					<div class="nav-icon">👤</div>
+					<div class="nav-label">Profile</div>
+				</div>
+				<div class="nav-item" data-page="chat">
+					<div class="nav-icon">💬</div>
+					<div class="nav-label">Chat Global [Soon]</div>
+				</div>
+				<div class="nav-item" data-page="welcome">
+					<div class="nav-icon">👋</div>
+					<div class="nav-label">Welcome</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+	<div id="loading-card" class="loading-overlay" role="status" aria-live="polite">
+		<div class="loading-content">
+			<div class="loading-logo">KH<span class="loading-two">2</span></div>
+			<div class="loading-spinner" aria-hidden="true"></div>
+			<div class="loading-text">Chargement en cours</div>
+		</div>
+	</div>
+
+	<script src="Settings.js"></script>
+</body>
+</html>

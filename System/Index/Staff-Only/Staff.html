@@ -1,0 +1,137 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Staff Only</title>
+    <link rel="stylesheet" href="Staff.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo large" id="logo">
+            KH<span class="two">2<span class="crown" aria-hidden="true">👑</span></span>
+        </div>
+    </header>
+
+    <div class="banner" id="banner">
+        <div class="banner-fallback"></div>
+    </div>
+
+    <div id="nav-widget" class="nav-widget hidden" aria-hidden="true">
+        <div class="nav-content">
+            <div class="nav-title">Navigation</div>
+            <div class="nav-items">
+                <div class="nav-item" data-page="welcome">
+                    <div class="nav-icon">👋</div>
+                    <div class="nav-label">Welcome</div>
+                </div>
+                <div class="nav-item" data-page="profile">
+                    <div class="nav-icon">👤</div>
+                    <div class="nav-label">Profile</div>
+                </div>
+                <div class="nav-item" data-page="chat">
+                    <div class="nav-icon">💬</div>
+                    <div class="nav-label">Chat Global</div>
+                </div>
+                <div class="nav-item" data-page="Boutique">
+                    <div class="nav-icon">🛒</div>
+                    <div class="nav-label">Boutique</div>
+                </div>
+                <div class="nav-item" data-page="settings">
+                    <div class="nav-icon">⚙️</div>
+                    <div class="nav-label">Paramètres</div>
+                </div>
+                <div class="nav-item" data-page="Chat-Staff">
+                    <div class="nav-icon">🔧</div>
+                    <div class="nav-label">Chat [Staff]</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="staff-main">
+        <section class="staff-panel">
+            <div class="staff-widget">
+                <div class="staff-title">Staff Permissions</div>
+                <div class="staff-items">
+                    <div class="staff-item" id="command-widget">
+                        <div class="staff-icon">🔧</div>
+                        <div class="staff-label">Command</div>
+                    </div>
+                    <div class="staff-item" id="user-widget">
+                        <div class="staff-icon">👥</div>
+                        <div class="staff-label">Users</div>
+                    </div>
+                    <div class="staff-item empty-widget">
+                        <div class="staff-icon"></div>
+                        <div class="staff-label"></div>
+                    </div>
+                </div>
+                <div class="command-panel" id="command-panel">
+                    <div class="command-title">Commandes Actives</div>
+                    <div class="command-item">
+                        <label for="role-user">Ajouter un rôle</label>
+                        <input type="text" placeholder="Pseudo définitif" id="role-user">
+                        <select id="role-select">
+                            <option value="">Sélectionner un rôle</option>
+                            <option value="Grand Gérant">Grand Gérant</option>
+                            <option value="Collaboration">Collaboration ★</option>
+                            <option value="Influenceur">Influenceur ▶️</option>
+                            <option value="Streamer">Streamer 🟣</option>
+                            <option value="KH2 Prenium">KH2 Prenium ✨</option>
+                        </select>
+                        <div id="role-preview" class="role-preview">Sélectionnez un rôle pour voir l’apparence du tag.</div>
+                        <button id="add-role-btn">Ajouter</button>
+                    </div>
+                    <div class="command-item">
+                        <label for="remove-role-user">Supprimer un rôle</label>
+                        <input type="text" placeholder="Pseudo définitif" id="remove-role-user">
+                        <select id="remove-role-select">
+                            <option value="">Sélectionner un rôle</option>
+                            <option value="Grand Gérant">Grand Gérant</option>
+                            <option value="Collaboration">Collaboration ★</option>
+                            <option value="Influenceur">Influenceur ▶️</option>
+                            <option value="Streamer">Streamer 🟣</option>
+                            <option value="KH2 Prenium">KH2 Prenium ✨</option>
+                        </select>
+                        <button id="remove-role-btn">Supprimer</button>
+                    </div>
+                    <div class="command-item">
+                        <label for="ban-user">Bannir un utilisateur</label>
+                        <input type="text" placeholder="Pseudo ou ID" id="ban-user">
+                        <button id="ban-btn">Bannir</button>
+                    </div>
+                </div>
+                <div class="user-panel" id="user-panel">
+                    <div class="user-panel-inner">
+                        <div class="user-panel-header">
+                            <div>
+                                <div class="command-title">Users</div>
+                                <div class="user-count" id="user-count">0 utilisateurs</div>
+                            </div>
+                            <button class="btn small close-btn" id="close-user-panel">✖</button>
+                        </div>
+                        <div class="user-list" id="user-list">
+                            <p class="empty-list">Aucun utilisateur avec pseudo définitif.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="loading-card" class="loading-overlay" role="status" aria-live="polite">
+        <div class="loading-content">
+            <div class="loading-logo">KH<span class="loading-two">2</span></div>
+            <div class="loading-spinner" aria-hidden="true"></div>
+            <div class="loading-text">Chargement en cours</div>
+        </div>
+    </div>
+
+    <div id="action-toast" class="action-toast hidden" aria-live="polite" role="status">
+        <div class="action-toast-content" id="action-toast-message">Action effectuée</div>
+    </div>
+
+    <script src="Staff.js"></script>
+</body>
+</html>
